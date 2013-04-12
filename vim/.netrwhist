@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/wangjian/source/glibc/stdlib'
+let g:netrw_dirhist_2='/Users/wangjian/source/glibc/libio'
+let g:netrw_dirhist_3='/usr/local/go/src/cmd/6g'
+let g:netrw_dirhist_4='/Users/wangjian/.vim'
