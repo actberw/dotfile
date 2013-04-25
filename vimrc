@@ -1,7 +1,7 @@
 syntax enable
 filetype plugin indent on
 
-autocmd FileType python set tabstop=4 | set shiftwidth=4 | set expandtab
+autocmd FileType python,shell,bash,sh set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
 
 set backspace=indent,eol,start
 
@@ -29,7 +29,7 @@ set incsearch
 set hlsearch
 
 " pylint 静态代码检查
-autocmd FileType python compiler Pylint 
+" autocmd FileType python compiler Pylint 
 
 let g:vimrc_author='actberw' 
 let g:vimrc_email='actberw@gmail.com' 

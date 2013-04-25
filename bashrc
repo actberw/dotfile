@@ -1,7 +1,26 @@
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+# history 多窗口追加合并
+shopt -s histappend 
+PROMPT_COMMAND='history -a'
+
+# 显示git branch name
+find_git_branch () {
+    local dir=. head
+    until [ "$dir" -ef / ]; do
+        if [ -f "$dir/.git/HEAD" ]; then
+            head=$(< "$dir/.git/HEAD")
+            if [[ $head = ref:\ refs/heads/* ]]; then
+                git_branch=" → ${head#*/*/}"
+            elif [[ $head != '' ]]; then
+                git_branch=" → (detached)"
+            else
+                git_branch=" → (unknow)"
+            fi
+            return
+        fi
+        dir="../$dir"
+    done
+    git_branch=''
 }
-function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
-}
-export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\e[1;31m\]$(parse_git_branch)\[\e[0m\$ "
+
+export PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
+export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w\e[1;31m\$git_branch\e[0m\$ "
