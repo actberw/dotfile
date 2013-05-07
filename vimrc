@@ -1,7 +1,7 @@
 syntax enable
 filetype plugin indent on
 
-autocmd FileType python,shell,bash,sh set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+autocmd FileType python,shell,bash,sh,mkd set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
 
 set backspace=indent,eol,start
 
@@ -20,22 +20,11 @@ set laststatus=2
 set encoding=utf-8
 set fileencodings=utf-8,cp936,gbk
 
-" 插件管理
-call pathogen#infect()
-call pathogen#helptags()
-
 " 搜索设置
 set incsearch
 set hlsearch
 
-" pylint 静态代码检查
-" autocmd FileType python compiler Pylint 
-
-let g:vimrc_author='actberw' 
-let g:vimrc_email='actberw@gmail.com' 
-let g:vimrc_homepage='' 
- 
-
+" 主题
 colorscheme desert
 
 " 开启光亮光标行 
@@ -46,9 +35,24 @@ colorscheme desert
 set cursorcolumn
 hi CursorColumn cterm=NONE ctermbg=218 ctermfg=white guibg=darkred guifg=white
 
+" 插件管理
+call pathogen#infect()
+call pathogen#helptags()
+
+" pylint 静态代码检查
+" autocmd FileType python compiler Pylint 
+
+let g:vimrc_author='actberw' 
+let g:vimrc_email='actberw@gmail.com' 
+let g:vimrc_homepage='' 
+
+" 关闭markdown 折叠
+let g:vim_markdown_folding_disabled=""
+
+
+" 快捷键设置
 nmap <Space> :TagbarToggle<CR>
 nmap <F4> :AuthorInfoDetect<CR>
 " cmap qi q!
 map ; <C-w>w
-cmap search CtrlP 
 cmap tlist TagbarToggle
