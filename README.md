@@ -21,9 +21,12 @@ ctrlp.vim for ctrl + P
 first Delete the relevant section from .git/config
 
 ```
-     git rm –cached vim/bundle/vim-markdown  
-     rm -rf .git/modules/submodule_name  
-     rm -rf path_to_submodule  
+     git config -f .gitmodules --remove-section submodule.vim/bundle/vim-markdown  
+     git config -f .git/config --remove-section submodule.vim/bundle/vim-markdown  
+     git rm –cached vim/bundle/vim-markdown   
+
+     rm -rf .git/modules/vim/bundle/vim-markdown  
+     rm -rf vim/bundle/vim-markdown   
 ```
 
 3. 升级所有的插件
