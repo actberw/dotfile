@@ -7,8 +7,8 @@ persional vim configurations and plugin list
 pathogen for plugin manager   
 snipmate for code generation(requires vim-addon-mw-utils and tlib and vim-snippets)  
 tagbar for dir view  
-markdown for markdown syntax highlight
-ctrlp.vim for ctrl + P
+markdown for markdown syntax highlight  
+ctrlp.vim for ctrl + P  
 
 ## submodule(在worktree根目录下执行)   
 1. 添加submodule
