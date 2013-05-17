@@ -1,7 +1,7 @@
 syntax enable
 filetype plugin indent on
 
-autocmd FileType python,shell,bash,sh,mkd set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+autocmd FileType python,shell,bash,sh,mkd,html set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
 
 set backspace=indent,eol,start
 
@@ -49,6 +49,8 @@ let g:vimrc_homepage=''
 " 关闭markdown 折叠
 let g:vim_markdown_folding_disabled=""
 
+" ctags path
+" let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 " 快捷键设置
 nmap <Space> :TagbarToggle<CR>
