@@ -1,3 +1,6 @@
+" 不兼容vi
+" set nocp 
+
 syntax enable
 filetype plugin indent on
 
