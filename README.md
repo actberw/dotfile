@@ -23,7 +23,7 @@ first Delete the relevant section from .git/config
 ```
      git config -f .gitmodules --remove-section submodule.vim/bundle/vim-markdown  
      git config -f .git/config --remove-section submodule.vim/bundle/vim-markdown  
-     git rm –cached vim/bundle/vim-markdown   
+     git rm –-cached vim/bundle/vim-markdown   
 
      rm -rf .git/modules/vim/bundle/vim-markdown  
      rm -rf vim/bundle/vim-markdown   
