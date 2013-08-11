@@ -42,6 +42,11 @@ colorscheme desert
 set cursorcolumn
 hi CursorColumn cterm=NONE ctermbg=218 ctermfg=white guibg=darkred guifg=white
 
+" netrw setting
+" let g:netrw_altv = 1 
+let g:netrw_winsize = 30
+nmap fe :Sexplore!<CR>
+
 " 插件管理
 call pathogen#infect()
 call pathogen#helptags()
