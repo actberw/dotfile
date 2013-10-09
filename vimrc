@@ -9,7 +9,7 @@ autocmd FileType python,shell,bash,sh,mkd,html set tabstop=4 | set shiftwidth=4 
 set splitright
 set splitbelow
 
-" trailing space highlight
+" highlight and trailing space highlight
 match ErrorMsg /\s\+$/
 autocmd BufWritePre *.py :%s/\s\+$//e
 
