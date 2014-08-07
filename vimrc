@@ -1,7 +1,11 @@
 " 不兼容vi
 " set nocp 
 
+" 主题
+" colorscheme desert
+
 syntax enable
+
 filetype plugin indent on
 
 autocmd FileType python,shell,bash,sh,mkd,html set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
@@ -19,6 +23,10 @@ set backspace=indent,eol,start
 set autoindent
 set cindent
 
+" 缩进线
+let g:indentLine_color_term = 239
+let g:indentLine_char = '¦'
+
 set nu
 set showmatch
 
@@ -33,9 +41,6 @@ set fileencodings=utf-8,cp936,gbk
 " 搜索设置
 set incsearch
 set hlsearch
-
-" 主题
-colorscheme desert
 
 " 开启光亮光标行 
 " set cursorline
@@ -53,6 +58,10 @@ nmap fe :Sexplore!<CR>
 " 插件管理
 call pathogen#infect()
 call pathogen#helptags()
+
+" python import management
+let g:vimpy_prompt_resolve = 1
+let g:vimpy_remove_unused = 1
 
 " pylint 静态代码检查
 " autocmd FileType python compiler Pylint 
