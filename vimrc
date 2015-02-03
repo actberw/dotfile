@@ -1,8 +1,12 @@
 " 不兼容vi
 " set nocp 
 
+" 插件管理
+call pathogen#infect()
+call pathogen#helptags()
+
 " 主题
-" colorscheme desert
+colorscheme desert
 
 syntax enable
 
@@ -48,16 +52,12 @@ set hlsearch
 
 "开启高亮光标列
 set cursorcolumn
-hi CursorColumn cterm=NONE ctermbg=218 ctermfg=white guibg=darkred guifg=white
+hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=white guibg=darkred guifg=white
 
 " netrw setting
 " let g:netrw_altv = 1 
 let g:netrw_winsize = 30
 nmap fe :Sexplore!<CR>
-
-" 插件管理
-call pathogen#infect()
-call pathogen#helptags()
 
 " python import management
 let g:vimpy_prompt_resolve = 1
@@ -74,11 +74,12 @@ let g:vimrc_homepage=''
 let g:vim_markdown_folding_disabled=""
 
 " ctags path
-" let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 " 快捷键设置
+cmap tlist TagbarToggle
 nmap <Space> :TagbarToggle<CR>
 nmap <F4> :AuthorInfoDetect<CR>
+
 " cmap qi q!
 map ; <C-w>w
-cmap tlist TagbarToggle
