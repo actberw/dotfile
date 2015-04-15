@@ -63,12 +63,18 @@ nmap fe :Sexplore!<CR>
 let g:vimpy_prompt_resolve = 1
 let g:vimpy_remove_unused = 1
 
-" pylint 静态代码检查
-" autocmd FileType python compiler Pylint 
-
-let g:vimrc_author='actberw' 
-let g:vimrc_email='actberw@gmail.com' 
-let g:vimrc_homepage='' 
+" syntastic(pylint) 静态代码检查
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_python_pylint_args = ['-E']
+highlight SignColumn ctermbg=black
 
 " 关闭markdown 折叠
 let g:vim_markdown_folding_disabled=""
