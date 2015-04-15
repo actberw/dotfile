@@ -59,10 +59,6 @@ hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=white guibg=darkred guifg=white
 let g:netrw_winsize = 30
 nmap fe :Sexplore!<CR>
 
-" python import management
-let g:vimpy_prompt_resolve = 1
-let g:vimpy_remove_unused = 1
-
 " syntastic(pylint) 静态代码检查
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -71,11 +67,12 @@ let g:syntastic_auto_jump = 2
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore=E302,E501,E261,E226'
-highlight SignColumn ctermbg=black
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_args = '--ignore=C, F, R'
+" highlight SignColumn ctermbg=black
 highlight SyntasticWarning NONE
 highlight SyntasticError NONE
 
@@ -88,7 +85,6 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 " 快捷键设置
 cmap tlist TagbarToggle
 nmap <Space> :TagbarToggle<CR>
-nmap <F4> :AuthorInfoDetect<CR>
 
 " cmap qi q!
 map ; <C-w>w
