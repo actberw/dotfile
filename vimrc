@@ -55,7 +55,7 @@ set cursorcolumn
 hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=white guibg=darkred guifg=white
 
 " netrw setting
-" let g:netrw_altv = 1 
+" let g:netrw_altv = 1
 let g:netrw_winsize = 30
 nmap fe :Sexplore!<CR>
 
@@ -67,14 +67,17 @@ let g:vimpy_remove_unused = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_jump = 2
+let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['pylint']
-" let g:syntastic_python_pylint_args = ['-E']
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--ignore=E302,E501,E261,E226'
 highlight SignColumn ctermbg=black
+highlight SyntasticWarning NONE
+highlight SyntasticError NONE
 
 " 关闭markdown 折叠
 let g:vim_markdown_folding_disabled=""
