@@ -14,6 +14,7 @@ filetype plugin indent on
 
 autocmd FileType python,shell,bash,sh,mkd,html set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
 
+" split window position
 set splitright
 set splitbelow
 
@@ -37,6 +38,7 @@ set showmatch
 " 状态栏
 set ruler
 set laststatus=2
+set statusline+=%f
 
 " 编码设置
 set encoding=utf-8
@@ -71,8 +73,10 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = '--ignore=C, F, R'
-" highlight SignColumn ctermbg=black
+let g:syntastic_python_pylint_args = '-E'
+" only check when the user call :SyntasticCheck
+let g:syntastic_mode_map = { 'mode': 'passive' }
+highlight SignColumn ctermbg=black
 highlight SyntasticWarning NONE
 highlight SyntasticError NONE
 
