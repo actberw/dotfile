@@ -1,17 +1,25 @@
-vim  
-===  
+项目介绍
+======  
+
+## vim
 
 persional vim configurations and plugin list  
 
-## plugins:   
+### plugins  
 
-pathogen for plugin manager   
-snipmate for code generation(requires vim-addon-mw-utils and tlib and vim-snippets)  
-tagbar for dir view  
-markdown for markdown syntax highlight  
-ctrlp.vim for ctrl + P  
+pathogen: plugin manager   
+snipmate: code generation(requires vim-addon-mw-utils, tlib, vim-snippets and vim-snippets)  
+tagbar: tag view  
+markdown: markdown syntax highlight  
+indentline: show python indent level 
+syntastic: python syntax(pylint) check.
 
-## submodule(在worktree根目录下执行)   
+### 内置插件插件
+
+netrw: 目录浏览, 取代 NerdTree, `:help :netrw` 查看帮助文档.
+omni: 代码补全, `:help compl-omni` 查看帮助文档. snipmate是tab补全, 可以在vim-snippets中定义补全的代码段. omni还提供另两种方式的补全: 关键字补全(Ctrl-n, Ctrl-p)和语法补全(Ctrl-x Ctrl-O)
+
+### submodule(在worktree根目录下执行)   
 1. 添加submodule
 
 ```
@@ -42,4 +50,3 @@ first Delete the relevant section from .git/config
      git submodule init  
      git submodule update
 ```
-
