@@ -1,15 +1,15 @@
 SHELL := /bin/bash
 
-init: vim git .bashrc
+init: .vim .git .bashrc .tmux
 
-vim:
+.vim:
 	@echo "Config vim plugins";  \
 	ln -fs `pwd`/vimrc  ~/.vimrc;\
 	ln -fs `pwd`/vim    ~/.vim;  \
 	git submodule init;          \
 	git submodule update;
 
-git:
+.git:
 	@echo "Config git alias"
 	@source git-alias.sh
 
@@ -22,6 +22,6 @@ git:
 	fi;					\
 	echo -e "if [ -f ~/project/code/shell/bashrc ]; then\n    source ~/project/code/shell/bashrc\nfi" >> $$target_file
 
-tmux:
+.tmux:
 	@echo "Config tmux";\
 	ln -fs `pwd`/tmux.conf ~/.tmux.conf;
