@@ -15,7 +15,7 @@ init: .vim .git .bashrc .tmux
 
 .bashrc:
 	@echo "Config bashrc"; 			\
-	if [ -f "~/.bashrc" ]; then            \
+	if [ -f ~/.bashrc ]; then            	\
 	    target_file="$$HOME/.bashrc";       \
 	else                                    \
 	    target_file="$$HOME/.bash_profile"; \
