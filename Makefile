@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-init: .vim .git .bashrc .tmux
+init: .vim .git .bashrc .tmux .inputrc
 
 .vim:
 	@echo "Config vim plugins";  \
@@ -20,8 +20,12 @@ init: .vim .git .bashrc .tmux
 	else                                    \
 	    target_file="$$HOME/.bash_profile"; \
 	fi;					\
-	echo -e "if [ -f ~/project/code/shell/bashrc ]; then\n    source ~/project/code/shell/bashrc\nfi" >> $$target_file
+	echo -e "if [ -f ~/project/code/shell/bashrc ]; then\n    . ~/project/code/shell/bashrc\nfi" >> $$target_file
 
 .tmux:
 	@echo "Config tmux";\
 	ln -fs `pwd`/tmux.conf ~/.tmux.conf;
+
+.inputrc:
+	@echo "Config inputrc";\
+	cat `pwd`/inputrc >> ~/.inputrc

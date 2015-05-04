@@ -1,0 +1,6 @@
+# vi 模式快捷键, 默认是emacs
+# set editing-mode vi
+set completion-ignore-case on
+set show-all-if-ambiguous on
+# vim 补全模式, 而不是列出所有可能选项.
+# TAB: menu-complete
