@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-init: .vim .git .bashrc .tmux .inputrc
+init: .vim .git-config .bashrc .tmux .inputrc
 
 .vim:
 	@echo "Config vim plugins";  \
@@ -9,7 +9,7 @@ init: .vim .git .bashrc .tmux .inputrc
 	git submodule init;          \
 	git submodule update;
 
-.git:
+.git-config:
 	@echo "Config git alias"
 	@source git-alias.sh
 
@@ -20,7 +20,7 @@ init: .vim .git .bashrc .tmux .inputrc
 	else                                    \
 	    target_file="$$HOME/.bash_profile"; \
 	fi;					\
-	echo -e "if [ -f ~/project/code/shell/bashrc ]; then\n    . ~/project/code/shell/bashrc\nfi" >> $$target_file
+	echo -e "if [ -f ~/project/dotfile/bashrc ]; then\n    . ~/project/dotfile/bashrc\nfi" >> $$target_file
 
 .tmux:
 	@echo "Config tmux";\
