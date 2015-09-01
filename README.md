@@ -53,6 +53,13 @@ first Delete the relevant section from .git/config
      git submodule init  
      git submodule update
 ```
+5. YouCompleteMe安装
+需要先安装依赖 cmake
+```
+     git submodule update --init --recursive
+     cd vim/bundle/YouCompleteMe
+     ./install.py --clang-completer
+```
 
 ## basrc 
 
