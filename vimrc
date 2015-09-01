@@ -75,7 +75,7 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = '-E'
 " only check when the user call :SyntasticCheck
-let g:syntastic_mode_map = { 'mode': 'passive' }
+" let g:syntastic_mode_map = { 'mode': 'passive' }
 highlight SignColumn ctermbg=black
 highlight SyntasticWarning NONE
 highlight SyntasticError NONE
