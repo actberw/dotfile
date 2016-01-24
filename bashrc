@@ -34,3 +34,4 @@ export LSCOLORS=ExFxCxDxbxdxexGxGgGcGd
 alias rm="rm -i"
 alias ll='ls -lh'
 alias grep="grep --color=auto -n"
+#alias rsync="rsync -avzP"

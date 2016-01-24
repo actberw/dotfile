@@ -62,23 +62,23 @@ let g:netrw_winsize = 30
 nmap fe :Sexplore!<CR>
 
 " syntastic(pylint) 静态代码检查
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_auto_jump = 2
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = '-E'
-" only check when the user call :SyntasticCheck
-" let g:syntastic_mode_map = { 'mode': 'passive' }
-highlight SignColumn ctermbg=black
-highlight SyntasticWarning NONE
-highlight SyntasticError NONE
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_auto_jump = 2
+" let g:syntastic_auto_loc_list = 2
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_aggregate_errors = 1
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_python_pylint_args = '-E'
+" " only check when the user call :SyntasticCheck
+" " let g:syntastic_mode_map = { 'mode': 'passive' }
+" highlight SignColumn ctermbg=black
+" highlight SyntasticWarning NONE
+" highlight SyntasticError NONE
 
 " 关闭markdown 折叠
 let g:vim_markdown_folding_disabled=""
