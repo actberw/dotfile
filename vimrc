@@ -18,6 +18,9 @@ autocmd FileType python,shell,bash,sh,mkd,html set tabstop=4 | set shiftwidth=4 
 set splitright
 set splitbelow
 
+" Case insensitivity on filename autocomplete
+set wildignorecase
+
 " highlight and trailing space highlight
 match ErrorMsg /\s\+$/
 autocmd BufWritePre *.py :%s/\s\+$//e
