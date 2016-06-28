@@ -12,14 +12,16 @@ syntax enable
 
 filetype plugin indent on
 
-autocmd FileType python,shell,bash,sh,mkd,html set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+autocmd FileType python,shell,bash,sh,mkd,html,cpp set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
 
 " split window position
 set splitright
 set splitbelow
 
 " Case insensitivity on filename autocomplete
-set wildignorecase
+if exists("&wildignorecase")
+    set wildignorecase
+endif
 
 " highlight and trailing space highlight
 match ErrorMsg /\s\+$/
@@ -41,7 +43,7 @@ set showmatch
 " 状态栏
 set ruler
 set laststatus=2
-set statusline+=%f
+" set statusline+=%f
 
 " 编码设置
 set encoding=utf-8
