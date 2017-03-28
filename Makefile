@@ -1,31 +1,33 @@
 SHELL := /bin/bash
 
-init: .vim .git-config .bashrc .tmux .inputrc
+.PHONY: all vim git bash tmux inputrc
 
-.vim:
+all: git bash tmux inputrc
+
+vim:
 	@echo "Config vim plugins";  \
 	ln -fs `pwd`/vimrc  ~/.vimrc;\
-	ln -fs `pwd`/vim    ~/.vim;  \
+	ln -fsn `pwd`/vim    ~/.vim;  \
 	git submodule init;          \
 	git submodule update;
 
-.git-config:
+git:
 	@echo "Config git alias"
 	@source git-alias.sh
 
-.bashrc:
+bash:
 	@echo "Config bashrc"; 			\
 	if [ -f ~/.bashrc ]; then            	\
 	    target_file="$$HOME/.bashrc";       \
 	else                                    \
 	    target_file="$$HOME/.bash_profile"; \
 	fi;					\
-	echo -e "if [ -f ~/project/dotfile/bashrc ]; then\n    . ~/project/dotfile/bashrc\nfi" >> $$target_file
+	echo -e "[[ -f ~/project/dotfile/bashrc ]] && . ~/project/dotfile/bashrc" >> $$target_file
 
-.tmux:
+tmux:
 	@echo "Config tmux";\
 	ln -fs `pwd`/tmux.conf ~/.tmux.conf;
 
-.inputrc:
+inputrc:
 	@echo "Config inputrc";\
 	cat `pwd`/inputrc >> ~/.inputrc

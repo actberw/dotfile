@@ -1,7 +1,7 @@
 项目介绍
 ======  
 
-执行`make init` 初始化开发环境.
+执行`make all` 初始化开发环境.
 
 ## vim
 
@@ -10,7 +10,7 @@ persional vim configurations and plugin list
 #### 第三方插件
 
 pathogen: plugin manager   
-snipmate: code generation(requires vim-addon-mw-utils, tlib, vim-snippets and vim-snippets)  
+snipmate: code generation(requires vim-addon-mw-utils, tlib, vim-snippets)  
 tagbar: tag view  
 markdown: markdown syntax highlight  
 indentline: show python indent level  
@@ -26,7 +26,7 @@ omni: 代码补全, `:help compl-omni` 查看帮助文档. snipmate是tab补全,
 1. 添加submodule
 
 ```
-     git submodule add git://github.com/tpope/vim-markdown.git vim/bundle/vim-markdown  
+     git submodule add https://github.com/tpope/vim-markdown.git vim/bundle/vim-markdown  
 ```
 
 2. 删除  
@@ -61,7 +61,7 @@ first Delete the relevant section from .git/config
      ./install.py --clang-completer
 ```
 
-## basrc 
+## bashrc 
 
 定义了一些别名和在bash提示中显示git 分支.
 
