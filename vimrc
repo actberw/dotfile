@@ -12,7 +12,7 @@ syntax enable
 
 filetype plugin indent on
 
-autocmd FileType python,shell,bash,sh,mkd,html,cpp set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+autocmd FileType python,shell,bash,sh,mkd,html,cpp,go set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
 
 " split window position
 set splitright
@@ -62,9 +62,10 @@ set cursorcolumn
 hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=white guibg=darkred guifg=white
 
 " netrw setting
-" let g:netrw_altv = 1
-let g:netrw_winsize = 30
-nmap fe :Sexplore!<CR>
+let g:netrw_altv = 1
+let g:netrw_banner = 0
+let g:netrw_winsize = 20
+" nmap fe :Sexplore!<CR>
 
 " syntastic(pylint) 静态代码检查
 " set statusline+=%#warningmsg#
@@ -97,3 +98,32 @@ nmap <Space> :TagbarToggle<CR>
 
 " cmap qi q!
 map ; <C-w>w
+
+" go ctags
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+   \ }
