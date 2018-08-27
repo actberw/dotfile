@@ -13,6 +13,7 @@ syntax enable
 filetype plugin indent on
 
 autocmd FileType python,shell,bash,sh,mkd,html,cpp,go set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+autocmd FileType qf wincmd J
 
 " split window position
 set splitright
