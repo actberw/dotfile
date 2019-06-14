@@ -88,7 +88,7 @@ let g:netrw_winsize = 20
 " highlight SyntasticError NONE
 
 " 关闭markdown 折叠
-let g:vim_markdown_folding_disabled=""
+let g:vim_markdown_folding_disabled=1
 
 " ctags path
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
