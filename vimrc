@@ -1,5 +1,5 @@
 " 不兼容vi
-" set nocp 
+" set nocp
 
 " 插件管理
 call pathogen#infect()
@@ -13,6 +13,8 @@ syntax enable
 filetype plugin indent on
 
 autocmd FileType python,shell,bash,sh,mkd,html,cpp,go set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+
+" quickfix window 打开位置
 autocmd FileType qf wincmd J
 
 " split window position
@@ -23,10 +25,6 @@ set splitbelow
 if exists("&wildignorecase")
     set wildignorecase
 endif
-
-" highlight and trailing space highlight
-match ErrorMsg /\s\+$/
-autocmd BufWritePre *.py :%s/\s\+$//e
 
 set backspace=indent,eol,start
 
@@ -54,13 +52,17 @@ set fileencodings=utf-8,cp936,gbk
 set incsearch
 set hlsearch
 
-" 开启光亮光标行 
+" 开启光亮光标行
 " set cursorline
 " hi CursorLine   cterm=NONE ctermbg=218 ctermfg=white guibg=darkred guifg=white
 
-"开启高亮光标列
+" 开启高亮光标列
 set cursorcolumn
 hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=white guibg=darkred guifg=white
+
+" highlight and trailing space highlight
+match ErrorMsg /\s\+$/
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 " netrw setting
 let g:netrw_altv = 1
@@ -90,8 +92,6 @@ let g:netrw_winsize = 20
 " 关闭markdown 折叠
 let g:vim_markdown_folding_disabled=1
 
-" ctags path
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 " 快捷键设置
 cmap tlist TagbarToggle
@@ -99,6 +99,9 @@ nmap <Space> :TagbarToggle<CR>
 
 " cmap qi q!
 map ; <C-w>w
+
+" ctags path
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 " go ctags
 let g:tagbar_type_go = {
@@ -128,3 +131,12 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
    \ }
+
+let g:tagbar_type_markdown = {
+	\ 'ctagstype' : 'markdown',
+	\ 'kinds' : [
+		\ 'h:Heading_L1',
+		\ 'i:Heading_L2',
+		\ 'k:Heading_L3'
+	\ ]
+	\ }
