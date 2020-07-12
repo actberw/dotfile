@@ -12,7 +12,9 @@ syntax enable
 
 filetype plugin indent on
 
-autocmd FileType python,shell,bash,sh,mkd,html,cpp,go set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+" autocmd FileType python,shell,bash,sh,mkd,html,cpp,go set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+autocmd FileType python,shell,bash,sh,mkd,html,cpp set tabstop=4 | set shiftwidth=4 | set expandtab | set softtabstop=4
+autocmd FileType go set tabstop=4 | set shiftwidth=4 | set softtabstop=4
 
 " quickfix window 打开位置
 autocmd FileType qf wincmd J
