@@ -25,7 +25,7 @@ find_git_branch () {
 export PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
 # $ sign before git_branch need to escape
 export PS1="\[\e[1;38;5;64m\]\u@\h:\w\[\e[0;38;5;124m\]\$git_branch\[\e[0m\e[0;38;5;64m\] $\[\e[0m\] "
-export PS1_LOCAL="\[\e[1;38;5;172m\]\u@\h:\w\[\e[0;38;5;124m\]\$git_branch\[\e[0m\e[0;38;5;172m\] $\[\e[0m\] "
+# export PS1_LOCAL="\[\e[1;38;5;172m\]\u@\h:\w\[\e[0;38;5;124m\]\$git_branch\[\e[0m\e[0;38;5;172m\] $\[\e[0m\] "
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxbxdxexGxGgGcGd
