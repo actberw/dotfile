@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # history 多窗口追加合并
 shopt -s histappend 
 PROMPT_COMMAND='history -a'
