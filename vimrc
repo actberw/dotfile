@@ -64,7 +64,7 @@ hi CursorColumn cterm=NONE ctermbg=NONE ctermfg=white guibg=darkred guifg=white
 
 " highlight and trailing space highlight
 match ErrorMsg /\s\+$/
-autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.py,*.go,*.java,*.cpp :%s/\s\+$//e
 
 " netrw setting
 let g:netrw_altv = 1
@@ -93,6 +93,8 @@ let g:netrw_winsize = 20
 
 " 关闭markdown 折叠
 let g:vim_markdown_folding_disabled=1
+
+let g:snipMate = { 'snippet_version' : 1 }
 
 
 " 快捷键设置

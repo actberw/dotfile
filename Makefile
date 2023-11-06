@@ -13,7 +13,7 @@ vim:
 
 git:
 	@echo "Config git alias"
-	@source git-alias.sh
+	. ./git-alias.sh
 
 bash:
 	@echo "Config bashrc"; 			\

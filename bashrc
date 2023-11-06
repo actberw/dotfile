@@ -1,8 +1,11 @@
 #!/bin/bash
 
 # history 多窗口追加合并
-shopt -s histappend 
-PROMPT_COMMAND='history -a'
+[ ${BASH_VERSION} ] && shopt -s histappend
+[ ${ZSH_VERSION} ] && setopt APPEND_HISTORY
+
+# [ ${ZSH_VERSION} ] && setopt prompt_subst
+
 
 # 显示git branch name
 find_git_branch () {
@@ -21,12 +24,17 @@ find_git_branch () {
         fi
         dir="../$dir"
     done
-    git_branch=''
+    git_branch=""
 }
 
+PROMPT_COMMAND='history -a'
 export PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
+
 # $ sign before git_branch need to escape
-export PS1="\[\e[1;38;5;64m\]\u@\h:\w\[\e[0;38;5;124m\]\$git_branch\[\e[0m\e[0;38;5;64m\] $\[\e[0m\] "
+# zsh
+export PS1="%F{64}%n@%m:%~%F{124} %F{green}$ "
+# bash
+# export PS1="\[\e[1;38;5;64m\]\u@\h:\w\[\e[0;38;5;124m\]\$git_branch\[\e[0m\e[0;38;5;64m\] $\[\e[0m\] "
 # export PS1_LOCAL="\[\e[1;38;5;172m\]\u@\h:\w\[\e[0;38;5;124m\]\$git_branch\[\e[0m\e[0;38;5;172m\] $\[\e[0m\] "
 
 export CLICOLOR=1
